@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://vj2bw5urorgf"]
+
+[ext_resource type="Script" path="res://Scenes/Menus/menu.gd" id="1_ff5ma"]
+[ext_resource type="PackedScene" uid="uid://dvgq4axeflbdm" path="res://Scenes/space_background.tscn" id="1_krlth"]
+[ext_resource type="LabelSettings" uid="uid://be2y6b6e34wn7" path="res://fonts/title_label_settings.tres" id="2_odtil"]
+[ext_resource type="LabelSettings" uid="uid://b228j141dk30v" path="res://fonts/default_label_settings.tres" id="3_p3akb"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ff5ma")
+
+[node name="SpaceBackground" parent="." instance=ExtResource("1_krlth")]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Space Shooter"
+label_settings = ExtResource("2_odtil")
+horizontal_alignment = 1
+
+[node name="StartLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Press 'Space' to play"
+label_settings = ExtResource("3_p3akb")
+horizontal_alignment = 1

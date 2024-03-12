@@ -11,11 +11,30 @@ config_version=5
 [application]
 
 config/name="Space shooter using components"
-run/main_scene="res://Scenes/world.tscn"
+run/main_scene="res://Scenes/Menus/menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ResourceStash="res://resource_stash.gd"
+MusicPlayer="*res://Scenes/music_player.tscn"
+
+[display]
+
+window/size/viewport_width=160
+window/size/viewport_height=240
+window/size/window_width_override=640
+window/size/window_height_override=960
+window/stretch/mode="canvas_items"
+
+[layer_names]
+
+2d_physics/layer_1="player_hurtbox"
+2d_physics/layer_2="enemy_hurtbox"
+
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
